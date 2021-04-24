@@ -11,4 +11,5 @@ class Equipment < ApplicationRecord
 
   validates :daily_rate, presence: true
   validates :daily_rate, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { greater_than: 0, less_than: 1000 }
+
 end
