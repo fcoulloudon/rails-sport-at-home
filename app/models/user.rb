@@ -4,6 +4,11 @@ class User < ApplicationRecord
   has_many :equipments
 
   validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true
+  validates :phone, presence: true
+  validates :type, presence: true
+  validates :type, inclusion: { in: ["User", "Owner"] }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
