@@ -22,4 +22,4 @@ class EquipmentsController < ApplicationController
     def equipment_params
       params.require(:equipment).permit(:name, :image_url)
     end
-  end
+  end 
