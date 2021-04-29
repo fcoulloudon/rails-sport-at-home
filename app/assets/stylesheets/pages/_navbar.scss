@@ -9,3 +9,20 @@
     background-color: grey;
     opacity: 0.7;
 }
+
+.navbar {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-auto-flow: column; 
+}
+
+#navbarSupportedContent {
+
+}
+
+.div-navbar-spacing {
+    display:flex 
+}
+
+.nav-item {
+  padding: 0px 20px;
