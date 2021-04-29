@@ -1,6 +1,6 @@
 class Equipment < ApplicationRecord
   belongs_to :user
-  has_many: rents
+  # has_many: rents
 
   validates :title, presence: true
   validates :title, uniqueness: { scope: :rents,
