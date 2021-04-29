@@ -1,12 +1,12 @@
 class EquipmentsController < ApplicationController
   
+  def index
+    @equipments = Equipment.all
+  end
+  
   def show
     @equipment = Equipment.find(params[:equipment_id])
   end
-
-  def index
-    @equipments = Equipment.all
-  end  
   
   def create
       @rents = Rent.find(params[:rent_id])
@@ -18,17 +18,17 @@ class EquipmentsController < ApplicationController
         render 'equipments/show'
       end
     end
-  
-    def destroy
-      @equipment = Equipment.find(params[:id])
-      @rents = @equipment.rents
-      @equipment.destroy
-      redirect_to rents_path(@rents)
-    end
-  
-    private
-  
-    def equipment_params
-      params.require(:equipment).permit(:name, :image_url)
-    end
+
+  def destroy
+    @equipment = Equipment.find(params[:id])
+    @rents = @equipment.rents
+    @equipment.destroy
+    redirect_to rents_path(@rents)
   end
+
+  private
+
+  def equipment_params
+    params.require(:equipment).permit(:name, :image_url)
+  end
+end
