@@ -2,11 +2,18 @@ class RentsController < ApplicationController
   
   #### PRELIMINARY ####
   def index
-    @rents = Rent.all
+    @rents = Rent.where(user_id: userparams[:user_id])
   end
 
   def new
-    @rent = Rent.new # needed to instantiate the form_for
+    @user = User.find(params[:user_id])
+    if @user.type = "Owner"
+      redirect_to rent_path
+    else
+      @equipment = Equipment.find(params[:equipment_id])
+      #@owner = Equipment.find(params[:equipment_id]).user_id
+      @rent = Rent.new # needed to instantiate the form_for
+    end
   end
 
   def show
@@ -34,7 +41,7 @@ class RentsController < ApplicationController
   private
 
   def list_params
-    params.require(:rent).permit(:first_name, :last_name, :email, :phone, :type )
+    params.require(:rent).permit( :user_id, :equipment_id, :start_date, :end_date)
     # params.require(:name).require(:category).require(:address).permit(:phone_number)
   end
 
