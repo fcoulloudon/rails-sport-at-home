@@ -1,7 +1,9 @@
-<h1>New list</h1>
+<h1>New rents to add to an @equipment.title</h1>
 
-<%= form_for(@list) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
+<%= simple_form_for ([@equipment, @rent]) do |f| %>
+  <%= f.label :start_date %>
+  <%= f.input :start_date, :as :datepicker %>
+  <%= f.label :end_date %>
+  <%= f.input :end_date, :as :datepicker %>
   <%= f.submit %>
 <% end %>
