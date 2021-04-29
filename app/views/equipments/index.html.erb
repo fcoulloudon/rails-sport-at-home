@@ -1,0 +1,10 @@
+<div>
+  <h1>All equipments</h1>
+</div>
+
+<div class="right"><%= link_to 'New list', new_list_path, class: "btn btn-flat" %></div>
+<ul>
+  <% @equipments.each do |list| %>
+    <li><%= equipment.title %> <%= link_to 'Show', list_path(list) %></li>
+  <% end %>
+</ul>
