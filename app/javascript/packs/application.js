@@ -8,20 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-// Datepicker
-//= require jquery.ui.datepicker
-//= require jquery.ui.datepicker-fr
-
-$("input.datepicker").each(function(input) {
-  $(this).datepicker({
-    dateFormat: "dd/mm/yy",
-    altField: $(this).next()
-  })
-
-  // If you use i18n-js you can set the locale like that
-  $(this).datepicker("option", $.datepicker.regional[I18n.currentLocale()]);
-})
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -34,6 +20,12 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+
+// app/javascript/packs/application.js Flatpickr
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
