@@ -8,16 +8,11 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   validates :phone, presence: true
-  validates :type, presence: true
-  validates :type, inclusion: { in: ["User", "Owner"] }
+  validates :user_type, presence: true
+  validates :user_type, inclusion: { in: ["User", "Owner"] }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :email, presence: true
-  validates :phone, presence: true
-  validates :type, presence: true
 
 end
