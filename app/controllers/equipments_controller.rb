@@ -5,6 +5,7 @@ class EquipmentsController < ApplicationController
   
   def index
     @equipments = Equipment.all
+    @rent = Rent.new
   end
   
   def create

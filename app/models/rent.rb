@@ -1,4 +1,6 @@
 class Rent < ApplicationRecord
+  require "date_time_validator" 
+
   belongs_to :user
   belongs_to :equipment
 
@@ -10,7 +12,8 @@ class Rent < ApplicationRecord
   # and check for nil. takes date strings of the format m/d/yyyy m:h (am/pm)
 
   # this goes in the model
-  validates_with DateTimeValidator, :fields => [:start_date]
-  validates_with DateTimeValidator, :fields => [:end_date]
+
+  # validates_with DateTimeValidator, :fields => [:start_date]
+  # validates_with DateTimeValidator, :fields => [:end_date]
 
 end
