@@ -3,8 +3,7 @@ class Equipment < ApplicationRecord
   has_many :rents
 
   validates :title, presence: true
-  validates :title, uniqueness: { scope: :rents,
-    message: "We accept only unique title" }
+  # validates :title, uniqueness: { scope: :rents, message: "We accept only unique title" }
 
   validates :description, presence: true
   validates :description, length: { minimum: 20 }
