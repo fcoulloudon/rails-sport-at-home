@@ -1,0 +1,9 @@
+<div>
+  <h1>All equipments</h1>
+</div>
+
+<ul>
+  <% @equipments.each do |equipment| %>
+    <li><%= equipment.title %> <%= link_to 'Show', equipment_path(equipment) %> <%= link_to 'Rent',  new_equipment_rent_path(@rent, equipment_id: equipment.id) %></li>
+  <% end %>
+</ul>

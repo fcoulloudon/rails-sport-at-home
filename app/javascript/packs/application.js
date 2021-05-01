@@ -21,6 +21,12 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 
+// app/javascript/packs/application.js Flatpickr
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
+
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 

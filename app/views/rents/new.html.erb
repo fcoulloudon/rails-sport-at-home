@@ -1,7 +1,11 @@
-<h1>New list</h1>
+<div class="container">
+  <div class="form-wrapper" style="width: 600px; margin: 0 auto;">
+    <h1>New rent for <%= @equipment.title %></h1>
 
-<%= form_for(@list) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
-  <%= f.submit %>
-<% end %>
+    <%= simple_form_for ([@equipment, @rent]) do |f| %>
+      <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
