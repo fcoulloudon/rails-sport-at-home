@@ -1,4 +1,12 @@
 class EquipmentsController < ApplicationController
+    def index
+      @equipments  = Equipment.all
+    end
+
+    def def show
+    
+    end
+  
     def create
       @rents = Rent.find(params[:rent_id])
       @equipment = Equipment.new(equipment_params)
