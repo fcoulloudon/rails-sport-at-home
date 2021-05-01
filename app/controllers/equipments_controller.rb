@@ -19,20 +19,22 @@ class EquipmentsController < ApplicationController
   end
 
   def show
-    @equipment = Equipment.find(params[:equipment_id])
+    @equipment = Equipment.find(params[:id])
   end
 
   def edit
     @equipment = Equipment.find(params[:id])
-          @matchs = []
-      @match = nil
-      current_user.equipments.each do |equipment|
-        equipmentmatchs = EquipmentMatch.where(equipment_id: equipment.id)
-        equipmentmatchs.each do |equipmentmatch|
-          @matchs << Match.find(equipmentmatch.match.id)
-        end
-      end
   end
+
+  # def edit
+  #   @equipment = Equipment.find(params[:id])
+  #   current_user.equipments.each do |equipment|
+  #     equipmentmatchs = Equipment.where(id: params[:id])
+  #     equipmentmatchs.each do |equipmentmatch|
+  #       @matchs << Match.find(equipmentmatch.match.id)
+  #     end
+  #   end
+  # end
 
   def destroy
     @equipment = Equipment.find(params[:id])
@@ -43,13 +45,13 @@ class EquipmentsController < ApplicationController
 
   def update
     @equipment = Equipment.find(params[:id])
-    @equipment.update(params_equipment)
-    redirect_to flat_path(@equipment)
+    @equipment.update(equipment_params)
+    redirect_to equipment_path(@equipment)
   end
 
   private
 
   def equipment_params
-    params.require(:equipment).permit(:name, :image_url)
+    params.require(:equipment).permit(:name, :description, :image_url)
   end
 end
