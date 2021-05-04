@@ -2,9 +2,8 @@
   <h1>All rents</h1>
 </div>
 
-<div class="right"><%= link_to 'New list', new_list_path, class: "btn btn-flat" %></div>
 <ul>
-  <% @rents.each do |list| %>
-    <li><%= equipment.title %> <%= link_to 'Show', list_path(list) %></li>
+  <% @rents.each do |rent| %>
+    <li><%= rent.equipment_id %> <%= link_to 'Show', user_rents_path(rent) %></li>
   <% end %>
 </ul>

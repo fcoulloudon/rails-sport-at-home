@@ -2,7 +2,11 @@ class RentsController < ApplicationController
   
   #### PRELIMINARY ####
   def index
-    @rents = Rent.where(user_id: userparams[:user_id])
+    if current_user.user_type === "User"
+      @rents = Rent.where(user_id: current_user.id)
+    else
+      @rents = Rent.joins(:equipment).where(equipment: { user_id: current_user.id })
+    end
   end
 
   def create
