@@ -8,9 +8,17 @@
 require 'faker'
 puts "Cleaning database"
 User.destroy_all
+Equipment.destroy_all
 
 puts "Creating users"
-10.times do 
+10.times do
 user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, phone:Faker::PhoneNumber.cell_phone_in_e164, password: "12345678", user_type: "Owner")
-end 
+end
+
+puts "Creating Equipments"
+Equipment.create!(title: "rameur", description: "This is a fancy rowing machine", daily_rate: 50, user: User.first)
+Equipment.create!(title: "vélo", description: "This is a fancy rowing machine", daily_rate: 50, user: User.first)
+Equipment.create!(title: "tapis de course", description: "This is a fancy rowing machine", daily_rate: 50, user: User.first)
+
 puts "Finished!"
+

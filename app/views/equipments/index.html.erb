@@ -1,9 +1,19 @@
-<div>
+<div class="container">
   <h1>All equipments</h1>
-</div>
-
-<ul>
   <% @equipments.each do |equipment| %>
     <li><%= equipment.title %> <%= link_to 'Show', equipment_path(equipment) %> <%= link_to 'Rent',  new_equipment_rent_path(@rent, equipment_id: equipment.id) %></li>
+    <%= link_to equipment_path(equipment) do %>
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%=equipment.title %></h2>
+            <p>Short description here!</p>
+          </div>
+          <h2 class="card-trip-pricing"><%=equipment.daily_rate %></h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
   <% end %>
-</ul>
+</div>
