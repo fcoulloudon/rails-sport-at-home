@@ -1,9 +1,9 @@
 <div>
-  <h1>All rents</h1>
+  <h1>My rents</h1>
 </div>
 
 <ul>
   <% @rents.each do |rent| %>
-    <li><%= rent.equipment_id %> <%= link_to 'Show', user_rents_path(rent) %></li>
+    <li><%= rent.id %> <%= link_to 'Show', user_rent_path(user_id: current_user.id, id:rent.id) %></li>
   <% end %>
 </ul>
