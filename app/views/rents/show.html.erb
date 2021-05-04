@@ -1,19 +1,8 @@
-<h1>"<%= @list.name %>" details</h1>
+<h1>Location # <%= @rent.id %> details</h1>
 
-<ul class="list-group">
-  <% @list.bookmarks.each do |bookmark| %>
-    <li class="list-group-item"><%= bookmark.movie.title %> - <%= bookmark.comment %> - <%= link_to "Delete",
-            bookmark_path(bookmark),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %></li>
-  <% end %>
-</ul>
-
-
-<%= link_to 'Back', lists_path %> |
-<%= link_to 'Add a movie', new_list_bookmark_path(@list) %> |
-<%= link_to "Delete \"#{@list.name}\"",
-            list_path(@list),
+<%= link_to 'Back', user_rents_path(user_id:current_user) %> |
+<%= link_to "Delete \"#{@rent.id}\"",
+            user_rent_path(user_id:current_user),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
 <!-- ... -->

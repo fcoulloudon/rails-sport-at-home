@@ -5,8 +5,13 @@ class RentsController < ApplicationController
     if current_user.user_type === "User"
       @rents = Rent.where(user_id: current_user.id)
     else
-      @rents = Rent.joins(:equipment).where(equipment: { user_id: current_user.id })
+      @rents = Rent.joins(:equipment).where(user_id: current_user.id)
+      # raise
     end
+  end
+
+  def show
+    @rent = Rent.find(params[:id])
   end
 
   def create
@@ -44,19 +49,11 @@ class RentsController < ApplicationController
     # end
   end
 
-  def show
-    # to add filter based on user_id.type
-    @rents = Rent.find(params[:id])
-  end
-
-  
-
   def destroy
     @rent = Rent.find(params[:id])
     @rent.destroy
-
     # no need for app/views/lists/destroy.html.erb
-    redirect_to rents_path
+    redirect_to user_rents_path
   end
 
   private
