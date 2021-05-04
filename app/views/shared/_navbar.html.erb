@@ -1,6 +1,7 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "logo.png", alt: "test" %>
+    <%= image_tag "logo_sah.png", alt: "test" %>
   <% end %>
 
   <div class="div-navbar-spacing">
@@ -24,7 +25,7 @@
           <%= link_to "My Rents", user_rents_path(user_id:current_user) , class: "btn btn-equipment" %>
         </li>
         <li class="nav-item">
-          <%= link_to 'New equipment', new_user_equipment_path(:user_id), class: "btn btn-book" %>
+          <%= link_to 'Add an equipment', new_user_equipment_path(:user_id), class: "btn btn-book" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -33,7 +34,6 @@
             <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
             <% if current_user.user_type == "User" %>
               user_menu
-              #"dropdown-item" pour aligner les items dans le menu
             <% else %>
               owner_menu
             <% end %>
