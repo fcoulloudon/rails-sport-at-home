@@ -10,7 +10,7 @@ class EquipmentsController < ApplicationController
   end
   
   def create
-    @equipment = Equipment.new(params_equipment)
+    @equipment = Equipment.new(equipment_params)
     @equipment.user = current_user
     if @equipment.save
       redirect_to equipment_path(@equipment)
@@ -53,6 +53,6 @@ class EquipmentsController < ApplicationController
   private
 
   def equipment_params
-    params.require(:equipment).permit(:name, :description, :image_url)
+    params.require(:equipment).permit(:title, :description, :daily_rate, :image_url)
   end
 end
