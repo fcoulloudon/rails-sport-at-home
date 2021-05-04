@@ -1,6 +1,7 @@
 class EquipmentsController < ApplicationController
   def new
     @equipment = Equipment.new
+    @equipment.user = current_user
   end
   
   def index
