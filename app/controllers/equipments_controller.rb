@@ -8,6 +8,11 @@ class EquipmentsController < ApplicationController
     @equipments = Equipment.all
     @rent = Rent.new
   end
+
+  def myequipments
+    @equipments = current_user.equipments
+    @rent = Rent.new
+  end
   
   def create
     @equipment = Equipment.new(equipment_params)
