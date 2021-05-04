@@ -25,6 +25,12 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
             <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+            <% if current_user.user_type == "User" %>
+              user_menu
+              #"dropdown-item" pour aligner les items dans le menu
+            <% else %>
+              owner_menu
+            <% end %>
           <% else %>
             <%= link_to 'Register', new_user_registration_path, class: "dropdown-item" %>
             <%= link_to 'Sign in', new_user_session_path, class: "dropdown-item" %>
