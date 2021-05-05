@@ -25,7 +25,7 @@
           <%= link_to "My Rents", user_rents_path(user_id:current_user) , class: "btn btn-equipment" %>
         </li>
         <li class="nav-item">
-          <%= link_to '<i class="fas fa-search"></i> Add an equipment', new_user_equipment_path(:user_id), class: "btn btn-book" %>
+          <%= link_to 'Add an equipment', new_user_equipment_path(:user_id), class: "btn btn-book" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
