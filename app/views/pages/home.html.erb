@@ -3,12 +3,31 @@
     <h1><strong>Sport At Home</strong></h1>
     <p>Your sport equipment at home, for a cheap price!</p>
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Find my equipment!
-    </button>
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Find my equipment!
+        </button>
+      </div>
+      <% end %>
   </div>
-<% end %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Find the equipment you were looking for!</h3>
+      <p>Eiusmod labore consectetur cillum proident est velit. Magna et nostrud proident ex amet est sint Lorem laboris fugiat. Ipsum deserunt eiusmod commodo consectetur amet ea duis voluptate eiusmod amet commodo quis. Consequat fugiat velit incididunt incididunt labore sit incididunt duis est labore cillum nisi nulla nulla. Minim id consectetur magna aute ad aliquip duis amet et incididunt.
+      Ullamco incididunt sunt pariatur in proident velit est enim sit irure occaecat duis non. Elit eiusmod est laboris officia dolore irure. Do sunt id irure irure. Nostrud Lorem do commodo duis veniam ipsum enim ipsum Lorem ullamco dolore incididunt. Fugiat dolore cillum culpa quis minim aute eu pariatur sint consequat laborum quis. Dolor et consectetur esse exercitation dolore deserunt nisi excepteur ut reprehenderit in.</p>
+    </div>
+    <div class="col-sm-6">
+      <h3>Ready to entertain?</h3>
+      <p>Eiusmod labore consectetur cillum proident est velit. Magna et nostrud proident ex amet est sint Lorem laboris fugiat. Ipsum deserunt eiusmod commodo consectetur amet ea duis voluptate eiusmod amet commodo quis. Consequat fugiat velit incididunt incididunt labore sit incididunt duis est labore cillum nisi nulla nulla. Minim id consectetur magna aute ad aliquip duis amet et incididunt.
+      Ullamco incididunt sunt pariatur in proident velit est enim sit irure occaecat duis non. Elit eiusmod est laboris officia dolore irure. Do sunt id irure irure. Nostrud Lorem do commodo duis veniam ipsum enim ipsum Lorem ullamco dolore incididunt. Fugiat dolore cillum culpa quis minim aute eu pariatur sint consequat laborum quis. Dolor et consectetur esse exercitation dolore deserunt nisi excepteur ut reprehenderit in.</p>
+    </div>
+    <div class="col-sm-6">
+      <h3>Find your next equipment!</h3>
+      <p>Map to be integrated</p>
+    </div>
   </div>
 </div>

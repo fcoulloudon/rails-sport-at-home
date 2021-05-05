@@ -1,6 +1,13 @@
 // Specific CSS for your home-page
+body {
+  background-color: #fff;
+}
+
 .home {
-    background-color: gray;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
 }
 
 .card-louer {
@@ -16,57 +23,73 @@
     padding: 200px 0;
   }
   
-  .banner h1 {
-    margin: 0;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 32px;
-    font-weight: bold;
-  }
-  
-  .banner p {
-    font-size: 20px;
-    color: white;
-    opacity: .7;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  }
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
 
-  .btn-flat {
-    color: white;
-    padding: 8px 24px;
-    border-radius: 4px;
-    background: #1EDD88;
-    transition: background 0.3s ease;
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
 
-    &:hover {
-        color: #1EDD88;
-        padding: 8px 24px;
-        border-radius: 4px;
-        background: white;
-        transition: background 0.3s ease;
-      }
-  }
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
 
-  .search-form-control {
-    position: relative;
-  }
-  
-  .search-form-control .btn {
-    position: absolute;
-    top: 8px;
-    bottom: 8px;
-    right: 8px;
-  }
-  
-  .search-form-control .form-control {
-    height: 3.5rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    border: 1px solid #E7E7E7;
-  }
-  
-  .search-form-control .form-control:focus {
-    border: 1px solid #1EDD88;
-    outline: none !important;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  }
-  
+  &:hover {
+      color: #1EDD88;
+      padding: 8px 24px;
+      border-radius: 4px;
+      background: white;
+      transition: background 0.3s ease;
+    }
+}
+
+.search-form-control {
+  position: relative;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+}
+
+.search-form-control .form-control:focus {
+  border: 1px solid #1EDD88;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.col-sm-12 {
+  padding: 2%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.col-sm-6 {
+  padding: 2%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  background-color: #fff;
+}
