@@ -21,11 +21,15 @@
         <li class="nav-item">
           <%= link_to "My equipments",  myequipments_path() , class: "btn btn-equipment" %>
         </li>
+        <% if current_user %>
+          <li class="nav-item">
+            <%= link_to "My Rents", user_rents_path(current_user.id) , class: "btn btn-equipment" %>
+          </li>
+        <% end %>
         <li class="nav-item">
-          <%= link_to "My Rents", user_rents_path(user_id:current_user) , class: "btn btn-equipment" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Add an equipment', new_user_equipment_path(:user_id), class: "btn btn-book" %>
+          <%= link_to new_user_equipment_path(:user_id), class: "btn btn-book" do %>
+            <i class="fas fa-plus"></i> Add an equipment
+          <% end %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
