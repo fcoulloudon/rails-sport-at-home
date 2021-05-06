@@ -7,13 +7,15 @@
   </div>
 </div>
 
-<%= simple_form_for :search, url: equipments_path, method: :get do |f| %>
-<div class="search-form-control form-group">
-  <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-  <button name="button" type="submit" class="btn btn-flat">
-    <i class="fas fa-search"></i> Find my equipment!
-  </button>
+<div class="container" style='padding: 20px 20px;'>
+  <%= simple_form_for :search, url: equipments_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Find my equipment!
+    </button>
+  </div>
+  <% end %>
 </div>
-<% end %>
 
 <%= render partial: "equipments/partial/listingindex", locals: {equipments: @equipments} %>
