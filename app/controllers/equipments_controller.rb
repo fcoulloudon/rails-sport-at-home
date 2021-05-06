@@ -5,8 +5,14 @@ class EquipmentsController < ApplicationController
   end
   
   def index
-    @equipments = Equipment.all
-    @rent = Rent.new
+    if params[:search].present?
+      @equipments = Equipment.search_by_title_and_description(params[:search][:query])
+      # @rent = Rent.new
+    else
+      # raise
+      @equipments = Equipment.all
+      # @rent = Rent.new
+    end
   end
 
   def myequipments
