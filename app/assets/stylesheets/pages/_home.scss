@@ -93,3 +93,7 @@ body {
   font-size: 12px;
   background-color: #fff;
 }
+
+.full-height {
+  min-height: calc(100vh - 116px);
+}
