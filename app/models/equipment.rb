@@ -1,6 +1,7 @@
 class Equipment < ApplicationRecord
   belongs_to :user
   has_many :rents
+  has_one_attached :image
 
   validates :title, presence: true
   # validates :title, uniqueness: { scope: :rents, message: "We accept only unique title" }
