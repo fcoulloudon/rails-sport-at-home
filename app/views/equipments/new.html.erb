@@ -2,7 +2,7 @@
   <div class="form-wrapper" style="width: 600px; margin: 0 auto;">
     <h1>New equipment</h1>
 
-    <%= simple_form_for @equipment, url: user_equipments_path(@equipment, user_id: @equipment.user_id) do |f| %>
+    <%= simple_form_for @equipment, url: equipments_path do |f| %>
       <%= f.input :title, label: "Enter your equipment title:" %>
       <%= f.input :description, label: "Enter your equipment description:" %>
       <%= f.input :daily_rate, label: "Enter your equipment daily rate:" %>

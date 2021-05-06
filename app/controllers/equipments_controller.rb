@@ -1,9 +1,8 @@
 class EquipmentsController < ApplicationController
   def new
     @equipment = Equipment.new
-    @equipment.user = current_user
   end
-  
+
   def index
     @equipments = Equipment.all
     @rent = Rent.new
@@ -13,7 +12,7 @@ class EquipmentsController < ApplicationController
     @equipments = current_user.equipments
     @rent = Rent.new
   end
-  
+
   def create
     @equipment = Equipment.new(equipment_params)
     @equipment.user = current_user

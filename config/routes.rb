@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # resources :equipments, only: []
 
   # pour tout le monde, mais en particulier les "users"
-  resources :equipments, only: [ :index, :show ]
+  resources :equipments, only: [ :index, :show, :new, :create]
 
   resources :equipments, only: [] do
     resources :rents, only: [ :new, :create ]
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :users, only: [] do
     resources :rents , only: [ :index, :show, :destroy, :update, :edit ]
     # pour les owners
-    resources :equipments, only: [:new, :create, :destroy, :update, :edit]
+    resources :equipments, only: [:destroy, :update, :edit]
   end
 
   # resources :brands, only: [:index, :show] do
