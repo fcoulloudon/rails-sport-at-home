@@ -1,33 +1,24 @@
-<div class="banner" style="background-image: url('/assets/banner_img.jpg')">
+<div class="banner" style="background-image: url('/assets/banner_img_all_equipments.jpg')">
   <div class="container">
     <h1><strong>Sport At Home</strong></h1>
-    <p>Your sport equipment at home, for a cheap price!</p>
+    <p>All equipments available on Sport At Home</p>
     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> Find my equipment!
-        </button>
-      </div>
       <% end %>
   </div>
 </div>
+
 <div class="container">
-  <h1>All equipments</h1>
-  <% @equipments.each do |equipment| %>
-    <li><%= equipment.title %> <%= link_to 'Show', equipment_path(equipment) %> <%= link_to 'Rent',  new_equipment_rent_path(@rent, equipment_id: equipment.id) %></li>
-    <%= link_to equipment_path(equipment) do %>
+  <div class="h1-all-equipments">List of equipments found</div>
+    <div class="col-sm-4">
+      <% @equipments.each do |equipment| %>
       <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-trip-infos">
-          <div>
-            <h2><%=equipment.title %></h2>
-            <p>Short description here!</p>
-          </div>
-          <h2 class="card-trip-pricing"><%=equipment.daily_rate %></h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-        </div>
+        <h2><%= equipment.title %></h2>
+        
+        <%= link_to 'Show', equipment_path(equipment) %>
+        <%= link_to 'Rent',  new_equipment_rent_path(@rent, equipment_id: equipment.id) %>
+        <%= link_to equipment_path(equipment) do %>
+          <% end %>
       </div>
     <% end %>
-  <% end %>
+  </div>
 </div>
