@@ -1,4 +1,6 @@
-<h2>Sign up</h2>
+<div class="col-lg-6" style='margin: 0 auto;'>
+<h2 class="login-page-style">Sign up to Sport at Home</h2>
+<p class="login-page-style">And get the opportunity to ret any equipment you need!</p>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -34,7 +36,7 @@
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
+  <div class="btn btn-success" style='margin: 0px 0px 40px 0px;'>
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
