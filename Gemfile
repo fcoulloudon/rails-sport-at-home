@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.6'
 # Gemfile
 gem 'devise'
+# PG search
+gem 'pg_search', '~> 2.3.0'
+
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Date picker for simple_form
 gem 'simple-form-datepicker', '~> 0.1.3'
