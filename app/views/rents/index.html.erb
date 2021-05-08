@@ -1,10 +1,12 @@
-<div>
-  <h1>Those are you past and current rents!</h1>
+<div class="container">
+  <h1>Your rents (past & current)</h1>
 </div>
 
-<ul>
-  <% @rents.each do |rent| %>
-    <% equipment = @equipments.where(id: rent.equipment_id) %>
-    <li><%= equipment.first.title %> - From: <%= rent.start_date %> - To: <%= rent.end_date %> - <%= link_to 'Show', user_rent_path(user_id: current_user.id, id:rent.id) %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <ul>
+    <% @rents.each do |rent| %>
+      <% equipment = @equipments.where(id: rent.equipment_id) %>
+      <li><%= equipment.first.title %> - From: <%= rent.start_date %> - To: <%= rent.end_date %> - <%= link_to 'Show', user_rent_path(user_id: current_user.id, id:rent.id) %></li>
+    <% end %>
+  </ul>
+</div>
