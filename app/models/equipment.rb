@@ -12,6 +12,8 @@ class Equipment < ApplicationRecord
   validates :daily_rate, presence: true
   validates :daily_rate, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { greater_than: 0, less_than: 1000 }
 
+  validates :image, presence: true
+
   include PgSearch::Model
 
   pg_search_scope :search_by_title_and_description,
