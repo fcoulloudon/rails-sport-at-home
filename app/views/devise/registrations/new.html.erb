@@ -1,4 +1,5 @@
-<h2>Sign up</h2>
+<div class="col-lg-6" style='margin: 0 auto;'>
+<h2 class="login-page-style" style='margin: 40px 0px 40px 0px;'>Create your Sport at Home account</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -34,9 +35,14 @@
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
-  <div class="form-actions">
+  <div class="btn btn-success" style="margin-bottom: 20px;">
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
 
+<div class="btn btn-light" style="margin-bottom: 20px;">
 <%= render "devise/shared/links" %>
+</div>
+</div>
+
+
