@@ -1,8 +1,15 @@
-<h1>Location # <%= @rent.id %> details</h1>
 
+<h2>Rent #<%= @rent.id %> details - Equipment <%= @equipment.first.title %></h2>
+<img src="<% if @equipment.first.image.key? %><%= cl_image_path @equipment.first.image.key, height: 200, crop: :pad
+%><% else 
+%>https://resources.sport-tiedje.com/bilder/firstdegreefitness/neu2/Viking%20PRO%20V/Viking_Pro_V_02_600.jpg" width="200" height="200<% 
+end %>" alt="" class=""><br>
+<p><%= "#{@equipment.first.description}" %></p>
+<p>Daily rate: <%= "#{@equipment.first.daily_rate}" %></p>
+<br>
 <%= link_to 'Back', user_rents_path(user_id:current_user) %> |
-<%= link_to "Delete \"#{@rent.id}\"",
+<%= link_to "Cancel rent \"#{@rent.id}\"",
             user_rent_path(user_id:current_user),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
+            data: { confirm: "Are you sure to cancel this rent?" } %>
 <!-- ... -->
