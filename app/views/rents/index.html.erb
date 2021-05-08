@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Your rents (past & current)</h1>
+  <h1>My rents (past & current)</h1>
 </div>
 
 <div class="container">
@@ -11,8 +11,8 @@
             <div class="card-body p-4">
             <% equipment = @equipments.where(id: rent.equipment_id) %>
             <%= equipment.first.title %><br>
-            Start date: <%= rent.start_date %><br>
-            End date: <%= rent.end_date %><br>
+            <b>Start date:</b> <%= rent.start_date %><br>
+            <b>End date:</b> <%= rent.end_date %><br>
             <div class="btn btn-info" style='margin: 0px 0px 40px 0px;'>
               <%= link_to 'Show', user_rent_path(user_id: current_user.id, id:rent.id) %></>
               </div>
