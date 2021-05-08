@@ -1,5 +1,8 @@
-<div class="container">
-  <h1>My rents (past & current)</h1>
+<div class="banner-myrents" style="background-image: url('https://source.unsplash.com/1920x100/?sport')">
+  <div class="container">
+    <h1><strong>My rents</strong></h1>
+    <p>Find all the </p>
+  </div>
 </div>
 
 <div class="container">
@@ -11,7 +14,7 @@
             <% if rent.equipment.image.persisted? %>
               <% url = rent.equipment.image %>
             <% else %>
-              <% url ='https://source.unsplash.com/random/200x100' %>
+              <% url ='https://source.unsplash.com/200x135/?sport' %>
             <% end %>
             <%= image_tag(url, width: '100%') %>
             <p class="my-rents-title"><%= rent.equipment.title %></p>
