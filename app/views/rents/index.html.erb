@@ -9,14 +9,20 @@
   <div class="row">
     <% @rents.each do |rent| %>
       <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-        <div class="card rounded shadow-sm border-1 mt-3">
+        <div class="card rounded shadow-sm border-1 mt-3 mb-3">
           <div class="card-body p-4">
+<<<<<<< HEAD
             <% if rent.equipment.image.persisted? %>
               <% url = rent.equipment.image %>
             <% else %>
               <% url ='https://source.unsplash.com/200x135/?sport' %>
             <% end %>
             <%= image_tag(url, width: '100%') %>
+=======
+            <img src="<% if rent.equipment.image.key? %><%= cl_image_path rent.equipment.image.key, height: 200, crop: :pad
+              %><% else %>https://resources.sport-tiedje.com/bilder/firstdegreefitness/neu2/Viking%20PRO%20V/Viking_Pro_V_02_600.jpg<% 
+              end %>" alt="" class="img-fluid d-block mx-auto">
+>>>>>>> 696bd34016d7fced1d5863962bde1d3027e97c96
             <p class="my-rents-title"><%= rent.equipment.title %></p>
             <b>Start date:</b> <%= rent.start_date %><br>
             <b>End date:</b> <%= rent.end_date %><br>

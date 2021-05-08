@@ -8,12 +8,13 @@
             <div class="card-body p-4"><img src="<% if equipment.image.key? %><%= cl_image_path equipment.image.key, height: 200, crop: :pad
               %><% else %>https://resources.sport-tiedje.com/bilder/firstdegreefitness/neu2/Viking%20PRO%20V/Viking_Pro_V_02_600.jpg<% 
               end %>" alt="" class="img-fluid d-block mx-auto mb-3">
-                <h5><%= equipment.title %><br><%= link_to 'More details', equipment_path(equipment) %> <% if (current_user != nil && current_user.user_type === "User")
+                <h5>Daily rate: <%= equipment.daily_rate %>€</h5>
+                <%= equipment.title %><br><%= link_to 'More details', equipment_path(equipment),  :class => "btn btn-info" %> <% if (current_user != nil && current_user.user_type === "User")
                    %>- <%= link_to 'Rent',  new_equipment_rent_path(@rent, equipment_id: equipment.id)
-                   %><% end %></h5>
+                   %><% end %>
                  <h5><% if mine %>
                   <%= link_to "Remove equipment",
-                    user_equipment_path(user_id: current_user.id, id: equipment.id),
+                    user_equipment_path(user_id: current_user.id, id: equipment.id), :class => "btn btn-warning",
                     method: :delete,
                     data: { confirm: "Are you sure to remove this equipment?" } %>
                  <% else 
