@@ -9,11 +9,20 @@
               %><% else 
               %>https://resources.sport-tiedje.com/bilder/firstdegreefitness/neu2/Viking%20PRO%20V/Viking_Pro_V_02_600.jpg<% 
               end %>" alt="" class="img-fluid d-block mx-auto mb-3">
-                <h5><%= equipment.title %><br><%= link_to 'More details', equipment_path(equipment) %> <%= link_to 'Rent',  new_equipment_rent_path(@rent, equipment_id: equipment.id) %></h5>
+                <h5><%= equipment.title %><br><%= link_to 'More details', equipment_path(equipment) %> <% if (current_user != nil && current_user.user_type === "User")
+                   %>- <%= link_to 'Rent',  new_equipment_rent_path(@rent, equipment_id: equipment.id)
+                   %><% end %></h5>
+                 <h5><% if mine %>
+                  <%= link_to "Remove equipment",
+                    user_equipment_path(user_id: current_user.id, id: equipment.id),
+                    method: :delete,
+                    data: { confirm: "Are you sure to remove this equipment?" } %>
+                 <% else 
+                 end %></h5>
             </div>
         </div>
     </div>
     <% end %>
-
+    <% # raise %>
   </div>
 </div>

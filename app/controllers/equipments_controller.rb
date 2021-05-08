@@ -51,9 +51,8 @@ class EquipmentsController < ApplicationController
 
   def destroy
     @equipment = Equipment.find(params[:id])
-    @rents = @equipment.rents
     @equipment.destroy
-    redirect_to rents_path(@rents)
+    redirect_to myequipments_path(id: current_user.id)
   end
 
   def update
