@@ -12,7 +12,7 @@
         <div class="card rounded shadow-sm border-1 mt-3 mb-3">
           <div class="card-body p-4">
             <img src="<% if rent.equipment.image.key? %><%= cl_image_path rent.equipment.image.key, height: 200, crop: :pad
-              %><% else %>https://resources.sport-tiedje.com/bilder/firstdegreefitness/neu2/Viking%20PRO%20V/Viking_Pro_V_02_600.jpg<% 
+              %><% else %>https://res.cloudinary.com/df8y5fexl/image/upload/v1620479501/placeholder_rvxg16.jpg<% 
               end %>" alt="" class="img-fluid d-block mx-auto">
             <p class="my-rents-title"><%= rent.equipment.title %></p>
             <b>Start date:</b> <%= rent.start_date %><br>
