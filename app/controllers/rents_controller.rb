@@ -2,6 +2,7 @@ class RentsController < ApplicationController
   
   #### PRELIMINARY ####
   def index
+    @equipments = Equipment.all
     if current_user.user_type === "User"
       @rents = Rent.where(user_id: current_user.id)
     else
@@ -12,6 +13,7 @@ class RentsController < ApplicationController
 
   def show
     @rent = Rent.find(params[:id])
+    @equipment = Equipment.where(id: @rent.equipment_id)
   end
 
   def create
