@@ -13,34 +13,38 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto spacing-navbar">
         <li class="nav-item">
-          <%= link_to "Menu", "#", class: "btn btn-menu" %>
+          <%= link_to "Home", equipments_path, class: "btn btn-menu" %>
         </li>
         <li class="nav-item">
           <%= link_to "All Equipments", equipments_path , class: "btn btn-equipment" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "My equipments",  myequipments_path() , class: "btn btn-equipment" %>
         </li>
         <% if current_user %>
           <li class="nav-item">
             <%= link_to "My Rents", user_rents_path(current_user.id) , class: "btn btn-equipment" %>
           </li>
         <% end %>
-        <li class="nav-item">
+        <% if (current_user != nil && current_user.user_type === "User") %>
+        <% elsif (current_user != nil && current_user.user_type === "Owner") %>
+          <li class="nav-item">
+            <%= link_to "My equipments",  myequipments_path() , class: "btn btn-equipment" %>
+          </li>
+          <li class="nav-item">
           <%= link_to new_user_equipment_path(:user_id), class: "btn btn-book" do %>
             <i class="fas fa-plus"></i> Add an equipment
           <% end %>
         </li>
+        <% else %>
+        <% end %>
         <li class="nav-item dropdown">
           <%= image_tag "https://res.cloudinary.com/df8y5fexl/image/upload/v1620334940/avatar_odv4sq.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% if user_signed_in? %>
-            <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
-            <% if current_user.user_type == "User" %>
-              user_menu
+          <% if current_user.user_type == "User" %>
+              <div class="dropdown-item">User menu</div>
             <% else %>
-              owner_menu
+              <div class="dropdown-item">Owner menu</div>
             <% end %>
+            <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
           <% else %>
             <%= link_to 'Register', new_user_registration_path, class: "dropdown-item" %>
             <%= link_to 'Sign in', new_user_session_path, class: "dropdown-item" %>
