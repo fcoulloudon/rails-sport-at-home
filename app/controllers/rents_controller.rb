@@ -23,7 +23,7 @@ class RentsController < ApplicationController
     @rent.start_date = Time.strptime(@rent.start_date.to_s, "%Y-%m-%d")
     @rent.end_date = Time.strptime(@rent.end_date.to_s, "%Y-%m-%d")
     if @rent.save
-      redirect_to equipments_path
+      redirect_to  user_rents_path(current_user)
     else
       @equipment = Equipment.find(params[:equipment_id])
       render :new
