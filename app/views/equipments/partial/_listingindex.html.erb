@@ -1,21 +1,19 @@
 <div class="container">
-  <h1>All equipments</h1>
-  <% equipments.each do |equipment| %>
-    <li><%= equipment.title %> <%= link_to 'Show', equipment_path(equipment) %> <%= link_to 'Rent',  new_equipment_rent_path(@rent, equipment_id: equipment.id) %></li>
-    <%= link_to equipment_path(equipment) do %>
-      <div class="card-trip">
-        <img src="<% if equipment.image.key? %><%= cl_image_path equipment.image.key, height: 200, crop: :pad
-         %><% else 
-         %>https://resources.sport-tiedje.com/bilder/firstdegreefitness/neu2/Viking%20PRO%20V/Viking_Pro_V_02_600.jpg<% end %>"/>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%=equipment.title %></h2>
-            <p>Short description here!</p>
-          </div>
-          <h2 class="card-trip-pricing"><%=equipment.daily_rate %></h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  <div class="row pb-5 mb-4">
+
+    <% equipments.each do |equipment| %>
+    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card rounded shadow-sm border-1 mt-3">
+            <div class="card-body p-4"><img src="<% if equipment.image.key? %><%= cl_image_path equipment.image.key, height: 200, crop: :pad
+              %><% else 
+              %>https://resources.sport-tiedje.com/bilder/firstdegreefitness/neu2/Viking%20PRO%20V/Viking_Pro_V_02_600.jpg<% 
+              end %>" alt="" class="img-fluid d-block mx-auto mb-3">
+                <h5><%= equipment.title %><br><%= link_to 'More details', equipment_path(equipment) %> <%= link_to 'Rent',  new_equipment_rent_path(@rent, equipment_id: equipment.id) %></h5>
+            </div>
         </div>
-      </div>
+    </div>
     <% end %>
-  <% end %>
+
+  </div>
 </div>
