@@ -10,7 +10,7 @@
               end %>" alt="" class="img-fluid d-block mx-auto mb-3">
                 <h5>Daily rate: <%= equipment.daily_rate %>€</h5>
                 <%= equipment.title %><br><%= link_to 'More details', equipment_path(equipment),  :class => "btn btn-info" %> <% if (current_user != nil && current_user.user_type === "User")
-                   %>- <%= link_to 'Rent',  new_equipment_rent_path(@rent, equipment_id: equipment.id)
+                   %><%= link_to 'Rent',  new_equipment_rent_path(@rent, equipment_id: equipment.id), :class => "btn btn-success"
                    %><% end %>
                  <h5><% if mine %>
                   <%= link_to "Remove equipment",
