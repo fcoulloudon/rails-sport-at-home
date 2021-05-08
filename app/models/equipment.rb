@@ -1,6 +1,6 @@
 class Equipment < ApplicationRecord
   belongs_to :user
-  has_many :rents
+  has_many :rents, dependent: :destroy
   has_one_attached :image
 
   validates :title, presence: true
